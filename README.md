@@ -4,7 +4,7 @@ https://www.youtube.com/watch?v=Ubd-a8_-G8s
 
 https://raw.githubusercontent.com/RodrigoMvs123/Build-a-Buzzfeed-Clone-in-TypeScript-REST-API-Database-Node.js/main/README.md
 
-
+https://github.com/RodrigoMvs123/Build-a-Buzzfeed-Clone-in-TypeScript-REST-API-Database-Node.js/blame/main/README.md
 
 App.tsx
 import React, {useState, useEffect, createRaf } from 'react'
