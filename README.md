@@ -1,12 +1,12 @@
 # Build-a-Buzzfeed-Clone-in-TypeScript-REST-API-Database-Node.js
 
-https://www.youtube.com/watch?v=Ubd-a8_-G8s
+- https://www.youtube.com/watch?v=Ubd-a8_-G8s
+- https://raw.githubusercontent.com/RodrigoMvs123/Build-a-Buzzfeed-Clone-in-TypeScript-REST-API-Database-Node.js/main/README.md
+- https://github.com/RodrigoMvs123/Build-a-Buzzfeed-Clone-in-TypeScript-REST-API-Database-Node.js/blame/main/README.md
 
-https://raw.githubusercontent.com/RodrigoMvs123/Build-a-Buzzfeed-Clone-in-TypeScript-REST-API-Database-Node.js/main/README.md
+**App.tsx**
 
-https://github.com/RodrigoMvs123/Build-a-Buzzfeed-Clone-in-TypeScript-REST-API-Database-Node.js/blame/main/README.md
-
-App.tsx
+```typescript
 import React, {useState, useEffect, createRaf } from 'react'
 import Title from './Components/Title'
 import QuestionsBlock from "./components/QuestionBlock"
@@ -16,7 +16,7 @@ import {QuizData, Content} from '../interfaces'
 const App() = () => {
 
   const [quiz, setQuiz] = useState <QuizData | null> ()
-  const [chosenAnswerItems, setChosenAnswerItems] = useState<string>[>({})]
+  const [chosenAnswerItems, setChosenAnswerItems] = useState<string>[]({})]
   const [unansweredQuestionIds, setUnansweredQuestionIds]= useState<number[] | undefined>([])
   const [showAnswere, setShowAnswere] = useState <boolean>(false)
 
@@ -101,8 +101,11 @@ useEffect(() => {
 }
 
 export default App
+```
 
-Index.css
+**Index.css**
+
+```css
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 * {
@@ -196,9 +199,13 @@ p {
     width: 90%;
 
 }
+```
 
+---
 
-QuestionBlock.tsx
+**QuestionBlock.tsx**
+
+```typescript
 import React from 'react'
 import {Question} from '../../interfaces'
 
@@ -246,8 +253,11 @@ const handleClick = () => {
 }
 
 export default QuestionBlock
+```
 
-QuestionsBlock.tsx
+**QuestionsBlock.tsx**
+
+```typescript
 import React, { forwardRef } from 'react'
 import { Content,Question } from '../../interfaces'
 import QuestionBlock from './QuestionBlock'
@@ -285,9 +295,13 @@ const QuestionsBlock = ({
 }
 
 export default forwardRef (QuestionsBlock)
+```
 
+---
 
-AnswerBlock.tsx
+**AnswerBlock.tsx**
+
+```typescript
 import React, {useEffect, useState, forwardRef} from 'react'
 import {Answer} from '../../interfaces'
 
@@ -328,9 +342,13 @@ const AnswerBlock ({
 }
 
 export default forwardRef (AnswerBlock)
+```
 
+---
 
-Index.tsx
+**Index.tsx**
+
+```typescript
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
@@ -345,9 +363,13 @@ root.render(
     <App />
   </React.StrictMode>
 )
+```
 
+---
 
-Interfaces.tsx
+**Interfaces.tsx**
+
+```typescript
 interface QuizData{
     title: string;
     subtitle: string;
@@ -380,9 +402,13 @@ interface Question {
 }
 
 export {QuizData, Answer, Content, Question}
+```
 
+---
 
-Server.Ts
+**Server.Ts**
+
+```typescript
 import express, {Request, Response} from 'express'
 import axios, {AxiosRequest, AxiosResponse} from 'axios'
 import { QuizData } from './interfaces'
@@ -415,9 +441,13 @@ app.get ('/ quiz-item', async (req: Request, res: Response) => {
 })
 
 app.listen(PORT, callback: () => console.log ('sever is running on port' + PORT))
+```
 
+---
 
-Sample-Data.Json
+**Sample-Data.Json**
+
+```json
 {
     "quizId" : "3483j33",
     "text" : "what cheese are you ?",
@@ -457,9 +487,12 @@ Sample-Data.Json
         },
     ]
   }
-  
-  Package.json
-  {
+```
+
+**Package.json**
+
+```json
+{
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -503,10 +536,13 @@ Sample-Data.Json
     ]
   }
 }
+```
 
+---
 
+**Title.Tsx**
 
-Title.Tsx
+```typescript
 import React from 'react'
 import Title from './Components/Title'
 
@@ -528,57 +564,73 @@ const Title() = ({title, subtitle}) : {
 }
 
 export default Title
+```
 
+---
 
+**.env**
 
-.env
+```env
 TOKEN= 'X-Cassandra-Token': ...
 URL=  (...)
+```
 
+---
 
+**New Terminal**
 
-  
-
-
-
-
-
-
-
-
-
-
-
-New Terminal 
+```bash
 npx create-react-app my-app –template typescript 
+```
 
 DataStax Database 
+
+```bash
 npm i express axios nodemon
+```
 
 DataStax Database 
+
 Connect 
+
 Document API 
 
 X-Cassandra Token 
+
 Namespace ID
+
 Body 
 
 Launching Swagger UI
+
 Post ( Quizes ) 
+
+```json
 {
-“name”: Quirky_Quizes 
+"name": Quirky_Quizes 
 }
+```
+
 Execute 
 
 Post ( Quizes ) 
+
 Quirky_Quizes 
+
+```json
 {
 }
+```
 
+---
 
 Body
+
 The JSON document 
+
 Edite Value Model
+
+```json
 {
     "quizId" : "3483j33",
     "text" : "what cheese are you ?",
@@ -618,27 +670,37 @@ Edite Value Model
         },
     ]
   }
+```
+
 Execute 
+
 Response body 
 
+```bash
 npm run start:backend
 npm i ts-node
 npm i @types/express @types/node
+```
 
-
-
-
+---
 
 Get 
+
 Namespace id - quizes
+
 Collection id - quirky_quizes
+
 Execute 
 
 Request Url 
 
+```
 https://localhost:8000/quiz-item 
+```
 
+```bash
 npm .dotenv
 npr run start: frontend
 
 npr run start: frontend
+```
